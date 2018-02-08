@@ -53,7 +53,7 @@ project(":core") {
 
     dependencies {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
-        
+        compile files('libs/OsbirClient.jar')
     }
 }
 
