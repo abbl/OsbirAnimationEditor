@@ -9,7 +9,10 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Stack;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
+import com.kotcrab.vis.ui.VisUI;
+import com.kotcrab.vis.ui.widget.file.FileChooser;
 import pl.bbl.osbir.properties.EditorProperties;
+import pl.bbl.osbir.ui.EditorLayout;
 import pl.bbl.osbir.ui.UserInterface;
 
 public class AnimationEditor extends ApplicationAdapter {
@@ -19,15 +22,18 @@ public class AnimationEditor extends ApplicationAdapter {
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
     private UserInterface userInterface;
+	private EditorLayout editorLayout;
 
 	@Override
 	public void create () {
-	    this.assetManager = new AssetManager();
+		this.assetManager = new AssetManager();
 	    this.stage = new Stage();
 		this.batch = new SpriteBatch();
 		this.userInterface = new UserInterface(assetManager);
+		this.editorLayout = new EditorLayout(userInterface, stage);
 		setupCamera();
 		setupStage();
+		testFileChooser();
 	}
 
 	private void setupCamera(){
@@ -41,7 +47,14 @@ public class AnimationEditor extends ApplicationAdapter {
         actors.setFillParent(true);
         stage.addActor(actors);
         Gdx.input.setInputProcessor(stage);
+        actors.addActor(editorLayout.getLayout());
     }
+
+    private void testFileChooser(){
+		FileChooser fileChooser = new FileChooser(FileChooser.Mode.OPEN);
+		fileChooser.setSelectionMode(FileChooser.SelectionMode.DIRECTORIES);
+		stage.addActor(fileChooser);
+	}
 
 	@Override
 	public void render () {
@@ -49,11 +62,12 @@ public class AnimationEditor extends ApplicationAdapter {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		update();
 		batch.begin();
+		editorLayout.render(batch);
 		batch.end();
+		stage.draw();
 	}
 
 	private void update(){
-
     }
 
 	@Override

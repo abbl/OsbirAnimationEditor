@@ -1,62 +1,76 @@
 
 Buttons.png
-size: 1024,64
+size: 256,256
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 confirm-down
   rotate: false
-  xy: 2, 2
+  xy: 2, 206
   size: 128, 32
   orig: 128, 32
   offset: 0, 0
   index: -1
 confirm-up
   rotate: false
-  xy: 132, 2
+  xy: 2, 172
   size: 128, 32
   orig: 128, 32
   offset: 0, 0
   index: -1
 new-down
   rotate: false
-  xy: 654, 2
+  xy: 132, 138
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
   index: -1
 new-up
   rotate: false
-  xy: 720, 2
+  xy: 2, 2
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
   index: -1
 open-down
   rotate: false
-  xy: 262, 2
+  xy: 132, 206
   size: 96, 32
   orig: 96, 32
   offset: 0, 0
   index: -1
 open-up
   rotate: false
-  xy: 360, 2
+  xy: 2, 70
   size: 96, 32
   orig: 96, 32
   offset: 0, 0
   index: -1
 save-down
   rotate: false
-  xy: 458, 2
+  xy: 132, 172
   size: 96, 32
   orig: 96, 32
   offset: 0, 0
   index: -1
 save-up
   rotate: false
-  xy: 556, 2
+  xy: 2, 36
   size: 96, 32
   orig: 96, 32
+  offset: 0, 0
+  index: -1
+search-down
+  rotate: false
+  xy: 2, 138
+  size: 128, 32
+  orig: 128, 32
+  offset: 0, 0
+  index: -1
+search-up
+  rotate: false
+  xy: 2, 104
+  size: 128, 32
+  orig: 128, 32
   offset: 0, 0
   index: -1

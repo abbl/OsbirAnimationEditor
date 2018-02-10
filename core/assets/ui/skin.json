@@ -11,6 +11,7 @@ com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
         new: { down: new-down, up: new-up},
         open: {down: open-down, up: open-up},
         save: { down: save-down, up: save-up},
+		search: {down: search-down, up: search-up},
 }
 }
 

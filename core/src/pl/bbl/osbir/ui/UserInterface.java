@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.kotcrab.vis.ui.VisUI;
 
 public class UserInterface {
     private static final String UI_SKIN_PATH = "ui/skin.json";
@@ -22,6 +23,7 @@ public class UserInterface {
         loadDependencies();
         assetManager.finishLoading();
         loadSkin();
+        VisUI.load();
     }
 
     private void loadDependencies(){
@@ -60,6 +62,6 @@ public class UserInterface {
     }
 
     public void dispose(){
-
+        VisUI.dispose();
     }
 }
